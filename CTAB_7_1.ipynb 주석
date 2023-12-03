@@ -1,0 +1,254 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMrlLZD0f7hAjhhG5F2OsSH",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/subinjojo/su/blob/main/CTAB_7_1.ipynb%20%EC%A3%BC%EC%84%9D\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1.일한 시간과 시급을 계산하여 출력하는 코드\n",
+        " - 일한 시간(hours_worked)\n",
+        " - 일한 날짜(day_worked)\n",
+        " - 시급(pay-rate)\n",
+        " - 월급(monthly_pay)"
+      ],
+      "metadata": {
+        "id": "kiJNOX3cnsGA"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "  첫 번째 줄에서는 int함수를 사용하여 사용자로부터 입력받은 값을 정수형으로 변환한 후, hours_worked 변수에 저장합니다. 이렇게 입력받은 값을 변수에 저장하는 것은 프로그램에서 재사용하기 위한 것입니다.\n",
+        "\n",
+        "  두 번째 줄에서도 마찬가지로 int함수를 사용하여 사용자로부터 입력받은 값을 정수형으로 변환한 후, pay_rate 변수에 저장합니다.\n",
+        "\n",
+        "  세 번째 줄에서는 사용자로부터 날짜를 입력받아 day_worked 변수에 저장합니다.\n",
+        "\n",
+        "  네 번째 줄에서는 * 연산자를 사용하여 hours_worked와 day_worked 변수를 곱하여 일한 시간에 대한 월별 총 근무시간을 계산합니다. 그리고 이 값을 day_month 변수에 저장합니다.\n",
+        "\n",
+        "  다섯 번째 줄에서는 * 연산자를 사용하여 hours_worked, pay_rate, day_worked 변수를 곱하여 월급여를 계산합니다. 이 값을 monthly_pay 변수에 저장합니다.\n",
+        "\n",
+        "  마지막 줄에서는 f-string을 사용하여 문자열을 생성합니다. f-string을 사용하면 문자열 안에 변수 값을 쉽게 넣을 수 있습니다. 이렇게 생성된 문자열은 print 함수를 사용하여 출력됩니다.\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "jWPSKOKVLNi2"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "hours_worked = int(input(\"일한 시간을 입력하시오.:\"))                                        #input함수를 사용하여 사용자로부터 일한 시간을 입력받고 int함수를 사용하여 입력값을 정수형으로 변환한 후, hours_worked 변수에 저장합니다.\n",
+        "pay_rate = int(input(\"시급을 입력하시오.(23년 시급 9620):\"))                                 #input함수를 사용하여 사용자로부터 시급을 입력받고 마찬가지로 int함수를 사용하여 입력값을 정수형으로 변환한 후, pay_rate 변수에 저장합니다.\n",
+        "pay_rate = int(input(\"시급을 입력하시오.(23년 시급 9620):\"))\n",
+        "pay_rate = int(input(\"시급을 입력하시오.(23년 시급 9620):\"))\n",
+        "day_month = hours_worked *day_worked                                                          #input함수를 사용하여 사용자로부터 일한 날짜를 입력받고 int함수를 사용하여 입력값을 정수형으로 변환한 후, day_worked 변수에 저장합니다.\n",
+        "day_worked = int(input(\"일한 날짜를 입력하시오.:\"))                                           #input함수를 사용하여 사용자로부터 일한 날짜를 입력받고 int함수를 사용하여 입력값을 정수형으로 변환한 후, day_worked 변수에 저장합니다.\n",
+        "monthly_pay = hours_worked * pay_rate * day_worked                                            #하루 일한 시간, 시급, 일한 날짜를 곱하여 월급여를 계산한 후, monthly_pay 변수에 저장합니다.\n",
+        "print(f'일한시간은 {hours_worked}이며, 시급은 {pay_rate}이고, 월급여는 {monthly_pay}입니다.') #f-string을 사용하여 결과를 출력합니다. hours_worked, pay_rate, monthly_pay 변수를 이용하여 문자열을 생성하고, print() 함수를 사용하여 결과를 출력합니다."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "BaRyqvPCpDmw",
+        "outputId": "938fcccf-35aa-4c27-bc87-0ba1458f9012"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "일한 시간을 입력하시오.:10\n",
+            "시급을 입력하시오.(23년 시급 9620):9620\n",
+            "일한 날짜를 입력하시오.:25\n",
+            "일한시간은 10이며, 시급은 9620이고, 월급여는 2405000입니다.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2.환전하는 코드를 작성\n",
+        "- 변수 won, usd, exchange\n",
+        "- 계산 won*usd"
+      ],
+      "metadata": {
+        "id": "Y3MQynsvunNd"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "  input(\"환전할 달라를 입력:\")를 사용하여 사용자로부터 환전할 달러를 입력받습니다.\n",
+        "  입력받은 값은 문자열 형태로 반환되므로, int함수를 사용하여 정수형으로 변환한 후 변수 usd에 저장합니다.\n",
+        "  input(\"달러의 환율금액 입력(231031: 1372원)\")를 사용하여 사용자로부터 달러의 환율을 입력받습니다.\n",
+        "  입력받은 값은 문자열 형태로 반환되므로, int함수를 사용하여 정수형으로 변환한 후 변수 won에 저장합니다.\n",
+        "  입력받은 달러와 환율을 곱하여 원화로 계산한 결과를 변수 exchange에 저장합니다.\n",
+        "  f-string을 사용하여 환전하고자 하는 달러, 입력받은 환율, 계산한 원화를 문자열로 포맷팅합니다.\n",
+        "  이후 포맷팅된 문자열을 print함수를 사용하여 출력합니다."
+      ],
+      "metadata": {
+        "id": "p4bCYwzmMac-"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "usd = int(input(\"환전할 달라를 입력:\"))                                            # 사용자로부터 환전할 달러를 입력받습니다. 입력받은 값을 정수형으로 변환하여 변수 usd에 저장합니다.\n",
+        "won = int(input(\"달러의 환율금액 입력(231031: 1372원)\"))                           # 사용자로부터 달러의 환율을 입력받습니다. 입력받은 값을 정수형으로 변환하여 변수 won에 저장합니다.\n",
+        "exchange = won * usd                                                               # 입력받은 달러와 환율을 곱하여 원화로 계산한 값을 변수 exchange에 저장합니다.\n",
+        "print(f'환전하고 싶은 {usd}달러는 환율 {won}으로 계산하면 {exchange}원 입니다.')   # 환전하고자 하는 달러, 입력받은 환율, 계산한 원화를 출력합니다."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Z5hkxiDvvCM6",
+        "outputId": "ec82198f-4392-4e5d-ae6f-e53a40b82da8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "환전할 달라를 입력:500\n",
+            "달러의 환율금액 입력(231031: 1372원)1372\n",
+            "환전하고 싶은 500달러는 환율 1372으로 계산하면 686000원 입니다.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3.화씨를 섭씨로 섭씨를 화씨로 변경하는 코드\n",
+        "- 화씨를 섭씨로 ℉ = ℃ * 1.8 + 32\n",
+        "- 섭씨를 화씨로 ℃ = (℉ -32) / 1.8\n",
+        "- 변수 : 화씨 fahrenheit, 섭씨 celsius"
+      ],
+      "metadata": {
+        "id": "UgRzKUzfyIwB"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "  input(\"화씨를 입력하시오.:\")를 사용하여 사용자로부터 화씨 온도를 입력받습니다.\n",
+        "  int() 함수를 사용하여 입력받은 값을 정수로 변환한 후 fahrenheit 변수에 저장합니다.\n",
+        "  입력받은 화씨 온도를 섭씨 온도로 변환하기 위해 주어진 공식을 사용합니다.\n",
+        "  fahrenheit - 32를 계산하여 화씨 온도에서 32를 뺀 값을 구합니다.\n",
+        "  이후 1.8로 나누어 섭씨 온도로 변환한 값을 celsius 변수에 저장합니다.\n",
+        "  celsius 변수에 저장된 섭씨 온도를 출력합니다."
+      ],
+      "metadata": {
+        "id": "4y33HX32NPM1"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        " fahrenheit = int(input(\"화씨를 입력하시오.:\"))  # 사용자로부터 화씨 온도를 입력받습니다. 입력받은 값을 정수형으로 변환하여 변수 fahrenheit에 저장합니다.\n",
+        " celsius = (fahrenheit - 32) / 1.8               # 입력받은 화씨 온도를 섭씨 온도로 변환하기 위해 주어진 공식을 사용합니다. 화씨 온도에서 32를 뺀 뒤 1.8로 나누어 섭씨 온도를 계산합니다. 계산한 값을 변수 celsius에 저장합니다.\n",
+        " print(celsius)                                  # 변수 celsius에 저장된 섭씨 온도를 출력합니다."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "rgjOTqqBzauq",
+        "outputId": "15b21f76-9726-44b1-b2ef-75fdaaacd32f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "화씨를 입력하시오.:100\n",
+            "37.77777777777778\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "  사용자로부터 섭씨 온도를 입력받기 위해 input 함수를 사용합니다.\n",
+        "  입력받은 값을 float 함수를 사용하여 실수형으로 변환한 후 celsius 변수에 저장합니다.\n",
+        "  float 함수는 입력된 값을 실수형으로 변환합니다.\n",
+        "  섭씨 온도를 화씨 온도로 변환하기 위해 아래와 같은 공식을 사용합니다:\n",
+        "  화씨 = 섭씨 * 1.8 + 32\n",
+        "  celsius 변수에 저장된 섭씨 온도를 가져와서 공식에 대입하여 화씨 온도를 계산합니다.\n",
+        "  계산된 화씨 온도를 fahrenheit 변수에 저장합니다.\n",
+        "  fahrenheit 변수에 저장된 화씨 온도를 출력합니다.\n",
+        "  print 함수를 사용하여 화씨 온도를 화면에 출력합니다."
+      ],
+      "metadata": {
+        "id": "-Eisde03OK1w"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "celsius = float(input(\"섭씨를 입력하시오.:\"))   # 사용자로부터 섭씨 온도를 입력받아 실수형으로 변환하여 celsius 변수에 저장합니다.\n",
+        "fahrenheit = celsius * 1.8 + 32                 # 섭씨 온도를 화씨 온도로 변환하는 공식을 사용하여 fahrenheit 변수에 변환된 화씨 온도를 저장합니다.\n",
+        "print(fahrenheit)                               # 변환된 화씨 온도를 출력합니다."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kNif7caJ0Te9",
+        "outputId": "ebc7fbad-e739-450f-e31e-7f46c6ed7550"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "섭씨를 입력하시오.:37.77777777777778\n",
+            "100.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "P0oxMOXy1nNV"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
