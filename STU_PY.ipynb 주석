@@ -1,0 +1,60 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPZ2o2JRMet2BFYB607gm3v",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/subinjojo/su/blob/main/STU_PY.ipynb%20%EC%A3%BC%EC%84%9D\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "  먼저 total 변수를 0으로 초기화하고, counter 변수를 1로 초기화합니다. 그리고 while 반복문을 사용하여 counter가 10보다 작거나 같을 동안 반복합니다. 반복문 안에서는 사용자로부터 성적을 입력받고, 입력받은 성적을 total에 더합니다. 그리고 counter 값을 1 증가시킵니다. 반복문이 종료되면 total을 10으로 나눈 값을 average 변수에 저장합니다. 마지막으로 average 값을 출력합니다.\n"
+      ],
+      "metadata": {
+        "id": "CEk4fYE6XNto"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "cKYof2eOXG78"
+      },
+      "outputs": [],
+      "source": [
+        "# 다섯명의 성적을 입력을 받아 평균을 내는 프로그램을 만든다.\n",
+        "# 반복문과 조건문을 사용한다.\n",
+        "# 변수는 total, counter grade, average\n",
+        "total = 0           #변수 total은 0으로 선언하였다.\n",
+        "counter = 1          #변수 counter는 1로 선언하였다.\n",
+        "while counter <=10:     #반복문 while을 사용하여 카운터가 10보다 작거나 같을때 다음(내부)문장으로 넘어간다.\n",
+        "    grade= int(input(\"성적을 입력하시오.: \"))    #변수 grade에 int(정수형 변환)와 사용자로부터 입력을 받는 input을 사용하여 점수를 받는다.\n",
+        "    total= grade + total           #변수 total에 성적 grade와 변수total을 합한 값을 선언한다.\n",
+        "    counter = counter + 1           #변수 counter는 초기 선언한 counter의 값에 실행할 때마다 1씩 추가된다.\n",
+        "average = total / 10            #변수 average에 반복문에서 계산한 total 값을 10으로 나눈다.\n",
+        "print(average)"
+      ]
+    }
+  ]
+}
