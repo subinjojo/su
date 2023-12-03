@@ -1,0 +1,160 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyM6Dm7bYf3YWYdJ/iIsGMc1",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/subinjojo/su/blob/main/23_python3rd.ipynb%20%EC%A3%BC%EC%84%9D\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "_UqLy9XYUafq"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1.사용자로부터 두개의 정수를 받아서 합계를 출력\n",
+        "- 정수 x\n",
+        "- 정수 y"
+      ],
+      "metadata": {
+        "id": "DX5TBooZRvhw"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "  \"정수 2개를 입력하시오.:\"라는 문자열을 출력합니다.\n",
+        "  사용자에게 정수 2개를 입력하라는 안내 문구입니다.\n",
+        "  \"x의 값을 입력하시오.:\"라는 문자열을 출력하고, 사용자로부터 값을 입력받습니다.\n",
+        "  입력받은 값을 int 함수를 사용하여 정수형으로 변환한 후 x 변수에 저장합니다.\n",
+        "  \"y의 값을 입력하시오.:\"라는 문자열을 출력하고, 사용자로부터 값을 입력받습니다.\n",
+        "  입력받은 값을 int 함수를 사용하여 정수형으로 변환한 후 y 변수에 저장합니다.\n",
+        "  x와 y 변수에 저장된 값을 더하여 합계를 계산합니다.\n",
+        "  계산된 합계를 sum 변수에 저장합니다.\n",
+        "  sum 변수의 값을 출력합니다.\n",
+        "  합계를 화면에 출력합니다.\n",
+        "  f-string을 사용하여 {} 안에 변수의 값을 포맷팅하여 출력합니다.\n",
+        "  x, y, sum 변수의 값을 사용하여 수식과 결과를 출력합니다."
+      ],
+      "metadata": {
+        "id": "3gfNXusNREtl"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "H3uyoLEeUZQc",
+        "outputId": "c819a8e5-2140-4a99-cd34-26c61bfe0334"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "정수 2개를 입력하시오.:\n",
+            "x의 값을 입력하시오.:1\n",
+            "y의 값을 입력하시오.:2\n",
+            "3\n",
+            "1 + 2 의 값은 3이다.\n"
+          ]
+        }
+      ],
+      "source": [
+        "print(\"정수 2개를 입력하시오.:\")          # 사용자에게 정수 2개를 입력하라는 안내 문구를 출력합니다.\n",
+        "x = int(input(\"x의 값을 입력하시오.:\"))   # 사용자로부터 x의 값을 입력받아 정수형으로 변환하여 x 변수에 저장합니다.\n",
+        "y = int(input(\"y의 값을 입력하시오.:\"))   # 사용자로부터 y의 값을 입력받아 정수형으로 변환하여 y 변수에 저장합니다.\n",
+        "sum = x + y                               # x와 y 변수에 저장된 값을 더하여 합계를 계산하여 sum 변수에 저장합니다.\n",
+        "\n",
+        "print(sum)                                # sum 변수의 값을 출력합니다. 합계를 화면에 출력합니다.\n",
+        "print(f'{x} + {y} 의 값은 {sum}이다.')    # f-string을 사용하여 x, y, sum 변수의 값을 포맷팅하여 출력합니다. 수식과 결과를 출력합니다."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2.부가세를 계사\n",
+        "- 상품의 가격 (price)\n",
+        "- 부가세 (vat)"
+      ],
+      "metadata": {
+        "id": "b6GbMV7_SEfo"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "  \"상품의 가격을 입력하시오.:\"라는 문자열을 출력합니다.\n",
+        "  사용자에게 상품의 가격을 입력하라는 안내 문구입니다.\n",
+        "  \"상품의 가격:\"이라는 문자열을 출력하고, 사용자로부터 값을 입력받습니다.\n",
+        "  입력받은 값을 int 함수를 사용하여 정수형으로 변환한 후 price 변수에 저장합니다.\n",
+        "  price 변수에 저장된 가격에 0.1을 곱하여 부가세를 계산합니다.\n",
+        "  계산된 부가세를 vat 변수에 저장합니다.\n",
+        "  vat 변수의 값을 출력합니다.\n",
+        "  부가세를 화면에 출력합니다.\n",
+        "  f-string을 사용하여 {} 안에 변수의 값을 포맷팅하여 출력합니다.\n",
+        "  price 변수와 vat 변수의 값을 사용하여 상품의 가격과 부가세를 출력합니다."
+      ],
+      "metadata": {
+        "id": "aIs0wP34SAW8"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"상품의 가격을 입력하시오.:\")                           # 사용자에게 상품의 가격을 입력하라는 안내 문구 출력\n",
+        "price = int(input(\"상품의 가격:\"))                            # 사용자로부터 상품의 가격을 입력받고, 정수형으로 변환하여 price 변수에 저장\n",
+        "vat = price * 0.1                                             # 가격에 0.1을 곱하여 부가세 계산하여 vat 변수에 저장\n",
+        "print(vat)                                                    # 부가세 출력\n",
+        "print(f'상품의 가격은 {price}이며, 부가세는 {vat}이다.')      # f-string을 사용하여 상품의 가격과 부가세를 출력"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nmZOB-_DSRrs",
+        "outputId": "84600b49-948c-422b-e7e0-a42086f7bd94"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "상품의 가격을 입력하시오.:\n",
+            "상품의 가격:1000\n",
+            "100.0\n",
+            "상품의 가격은 1000이며, 부가세는 100.0이다.\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
