@@ -1,0 +1,580 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOCNWdVF+jfZ3lA8RPU1SdQ",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/subinjojo/su/blob/main/CTBC_9.ipynb%20%EC%A3%BC%EC%84%9D\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1. 두가지 이상의 선택, 다방향 선택구조 코딩\n",
+        " - 배송료 처리 3가지로 코딩\n",
+        " - 변수 : price\n",
+        " - 조건 ; 10만원 이상 배송비 0, 2만원 이상은 3천원, 2만원 이하면 5천원"
+      ],
+      "metadata": {
+        "id": "FwC_sBkzrZcK"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "  사용자로부터 구입 금액을 정수형으로 입력받아 price 변수에 저장합니다.\n",
+        "  만약 price 변수의 값이 100,000원 이상이라면, 배송료(shipping_cost)는 0원입니다.\n",
+        "  즉, 구입 금액이 100,000원 이상이면 배송료가 없습니다.\n",
+        "  그렇지 않고, 구입 금액이 100,000원 미만인 경우에는 추가적인 조건을 검사합니다.\n",
+        "  만약 구입 금액이 20,000원 이상이라면, 배송료(shipping_cost)는 3,000원입니다.\n",
+        "  그렇지 않고, 구입 금액이 20,000원 미만인 경우에는 배송료(shipping_cost)는 5,000원입니다.\n",
+        "  f-string을 사용하여 배송료를 포맷팅하여 출력합니다.\n",
+        "  {shipping_cost} 부분은 shipping_cost 변수의 값으로 대체되며, 최종 배송료가 출력됩니다."
+      ],
+      "metadata": {
+        "id": "xsvJ9OeASk5e"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "price = int(input(\"구입 금액 입력: \"))          # 변수 price 사용자가 정수형 금액입력\n",
+        "if price >= 100000:                             # price의 값이 10만원보다 크거나 같으면\n",
+        "  shipping_cost = 0                             # 선택1.배송료(shipping_cost)는 0원\n",
+        "else:                                           # 그게 아니면\n",
+        "   if price >= 20000:                           # 선택2 pricer값이 2만원보다 크거나 같으면\n",
+        "    shipping_cost = 3000                        # 배송료(shipping_cost)는 3000\n",
+        "   else:                                        # 그것도 아니면\n",
+        "    shipping_cost = 5000                        # 선택3. 배송료(shipping_cost)는 5000\n",
+        "print(f'배송료는 {shipping_cost}원 입니다.')    # F-staing문자 Format으로 최종배송료 출력"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Kzn546xgsWt7",
+        "outputId": "f9453f85-7d4a-4a55-8a12-904266b969db"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "구입 금액 입력: 200000\n",
+            "배송료는 0원 입니다.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2.반복구조를 이용한 \"환영합니다.\"를 5번 출력하는 코드 작성\n",
+        " - 변수 : welcome\n",
+        " - 출력내용 ; 환영합니다.를 세로로 5번,10번,30번"
+      ],
+      "metadata": {
+        "id": "ulA8nlRCypGv"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "  print(\"환영합니다.\") 문장을 5번 반복하여 출력합니다.\n",
+        "  각 줄마다 동일한 문장을 출력하므로 \"환영합니다.\"라는 문구가 총 5번 출력됩니다."
+      ],
+      "metadata": {
+        "id": "ofwYmcMDS9VV"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"환영합니다.\")  # \"환영합니다.\"라는 문자열을 출력합니다.\n",
+        "print(\"환영합니다.\")  # \"환영합니다.\"라는 문자열을 출력합니다.\n",
+        "print(\"환영합니다.\")  # \"환영합니다.\"라는 문자열을 출력합니다.\n",
+        "print(\"환영합니다.\")  # \"환영합니다.\"라는 문자열을 출력합니다.\n",
+        "print(\"환영합니다.\")  # \"환영합니다.\"라는 문자열을 출력합니다."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MXf2TdPm0Utw",
+        "outputId": "30222329-3353-460a-9d60-8b1dc56ff88f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "환영합니다.\n",
+            "환영합니다.\n",
+            "환영합니다.\n",
+            "환영합니다.\n",
+            "환영합니다.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "ItB3y_sqTRf0"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"환영합니다.\\n 5\") # \"환영합니다. 5\"라는 문자열을 출력합니다."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Qmqv233uzBjT",
+        "outputId": "91c9241e-a937-4c5d-b3e6-7fe8ffbf7397"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "환영합니다.\n",
+            " + 5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "  위의 코드는 while 루프를 사용하여 \"환영합니다.\" 문구를 번호와 함께 5번 출력합니다. 코드 실행 시 count 변수는 1로 초기화되며, while 루프는 count가 5보다 작거나 같은 동안 반복됩니다. 각 반복마다 \"(\", count, \")\", \"환영합니다.\" 문구가 출력되고, count 변수는 1씩 증가합니다."
+      ],
+      "metadata": {
+        "id": "Xs5sGZBZTnBd"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "count = 1                                  # 변수 count를 1로 초기화합니다.\n",
+        "while count <= 5:                          # count가 5보다 작거나 같은 동안 반복합니다.\n",
+        "  print(\"(\", count, \")\", \"환영합니다.\")    # 번호와 \"환영합니다.\"라는 문자열을 출력합니다.\n",
+        "  count = count + 1                        # count에 1을 더하여 값을 갱신합니다."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1pJg5gngzoA3",
+        "outputId": "0ceb4362-4fb7-42f6-eb5b-efd732ddea28"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "( 1 ) 환영합니다.\n",
+            "( 2 ) 환영합니다.\n",
+            "( 3 ) 환영합니다.\n",
+            "( 4 ) 환영합니다.\n",
+            "( 5 ) 환영합니다.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3.0부터 9까지 출력하는 코드 작성\n",
+        " - 변수:x"
+      ],
+      "metadata": {
+        "id": "rZjR-nvR1ilQ"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "  while 루프를 사용하여 0부터 9까지의 숫자를 출력합니다. 코드 실행 시 x 변수는 0으로 초기화되며, while 루프는 x가 10보다 작을 때까지 반복됩니다. 각 반복마다 x를 출력하고, x 값을 1씩 증가시킵니다."
+      ],
+      "metadata": {
+        "id": "tp6yjOXNUC3o"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x = 0                 # 변수 x를 0으로 초기화합니다.\n",
+        "while x < 10:         # x가 10보다 작은 동안 반복합니다.\n",
+        "  #print(x)           # x를 출력합니다\n",
+        "  print(x, end='')    # x를 출력하고 줄바꿈을 하지 않습니다.\n",
+        "  x = x + 1           # x에 1을 더하여 값을 갱신합니다."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "st_3l4tw1pfS",
+        "outputId": "660cba3e-c7bf-4288-e330-d3bc0602ce75"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0123456789"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "4.1부터 10까지 합산하는 코드작성"
+      ],
+      "metadata": {
+        "id": "FVXH6UX03Eoo"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "   while 루프를 사용하여 1부터 10까지의 숫자를 더한 결과를 출력합니다. 코드 실행 시 x 변수는 1로 초기화되며, total 변수는 0으로 초기화됩니다. while 루프는 x가 10보다 작거나 같을 때까지 반복됩니다. 각 반복마다 x 값을 total에 더하고, x 값을 1씩 증가시킵니다. 반복이 완료된 후, total 값을 출력합니다."
+      ],
+      "metadata": {
+        "id": "ZvQWn_NIUdmC"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x = 1                 # 변수 x를 1로 초기화합니다.\n",
+        "total = 0             # 변수 total을 0으로 초기화합니다.\n",
+        "while x <= 10:        # x가 10보다 작거나 같은 동안 반복합니다.\n",
+        "  total += x          # x 값을 total에 더합니다.\n",
+        "  #total = total + 1  #total = total + 1  # total에 1을 더하여 값을 갱신합니다.\n",
+        "  #x = x + 1          #x = x + 1  # x에 1을 더하여 값을 갱신합니다.\n",
+        "  x += 1              # x에 1을 더하여 값을 갱신합니다.\n",
+        "print(total)          # total 값을 출력합니다."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8eb93bHi3J2S",
+        "outputId": "7e79e923-3ea6-4ec1-e311-41db067f5894"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "55\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "5.3-6-9 게임(3의 배수 판단):3의 배수를 3으로 나누면 나머지가 0이 되므로 (i mod 3)의 값이 0이면 박수를 출력, 아니면 숫자 출력하는 코드"
+      ],
+      "metadata": {
+        "id": "KoWrGyAv4K47"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "  1부터 19까지의 숫자를 반복하면서, 각 숫자가 3의 배수인지 확인하여 출력하는 코드입니다. for 루프를 사용하여 num 변수가 1부터 19까지의 값을 순차적으로 가집니다. if문을 사용하여 num을 3으로 나눈 나머지가 0인 경우 \"박수\"를 출력하고, 그렇지 않은 경우에는 num 값을 출력합니다. print 함수의 end 매개변수를 사용하여 출력 후 줄바꿈 대신 공백을 넣습니다."
+      ],
+      "metadata": {
+        "id": "ndkmW1voUmuz"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for num in range(1. 20):  # 1부터 19까지의 숫자에 대해 반복합니다.\n",
+        "if num % 3 == 0:          # 숫자가 3의 배수인지 확인합니다.\n",
+        "print(\"박수\", end=' ')    # 3의 배수인 경우 \"박수\"를 출력하고 공백을 추가합니다.\n",
+        "else:\n",
+        "print(unm, end=' ')       # 3의 배수가 아닌 경우 숫자를 출력하고 공백을 추가합니다."
+      ],
+      "metadata": {
+        "id": "l7M1eezY4qRr"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "  먼저 num이라는 변수를 1로 초기화하고, while 반복문을 사용하여 num이 20보다 작거나 같은 동안 반복합니다. 각 반복마다 if 조건문을 사용하여 num이 3의 배수인지 확인하고, 조건이 참일 경우 \"박수\"를 출력하고 그렇지 않을 경우에는 num을 출력합니다. 마지막으로 num += 1을 통해 num을 1씩 증가시켜 다음 숫자로 넘어갑니다.\n",
+        "  따라서 이 코드를 실행하면 1부터 20까지의 숫자를 출력하며, 3의 배수일 경우에는 대신 \"박수\"라는 문자열이 출력됩니다.\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "o4_GJbarVmKO"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "num = 1                     # 변수 num을 1로 초기화합니다.\n",
+        "while num <= 20:            # num이 20보다 작거나 같은 동안 반복합니다.\n",
+        "  if num % 3 == 0:          # num이 3으로 나누어 떨어지는지 확인합니다.\n",
+        "    print(\"박수\", end=' ')  # num이 3의 배수일 경우 \"박수\"를 출력합니다.\n",
+        "  else:\n",
+        "    print(num, end=' ')     # num이 3의 배수가 아닐 경우 num을 출력합니다.\n",
+        "  num += 1                  # num에 1을 더해 다음 숫자로 넘어갑니다."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4O-D8FE55VNw",
+        "outputId": "9b189fc0-d510-4446-ca94-6695ab4450d3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1 2 박수 4 5 박수 7 8 박수 10 11 박수 13 14 박수 16 17 박수 19 20 "
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "6.팩토리얼 계산하는 코드 작성\n",
+        " - 1! = 1, 2! = 2(1),=2  3! = 3(2)(1)=6"
+      ],
+      "metadata": {
+        "id": "Y0y9V48DblQ3"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "  먼저 변수 i를 5로 초기화하고, 변수 factorial을 1로 초기화합니다. 그리고 while 반복문을 사용하여 i가 1보다 크거나 같을 때까지 반복합니다. 각 반복마다 factorial에 i를 곱하여 factorial 값을 업데이트하고, i에 1을 더해 다음 숫자로 넘어갑니다. 이렇게 반복문이 종료되면 최종적으로 계산된 factorial 값을 출력합니다."
+      ],
+      "metadata": {
+        "id": "TchQjlY6V8NK"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "i = 5               # 변수 i를 5로 초기화합니다.\n",
+        "factorial = 1       # 변수 factorial을 1로 초기화합니다\n",
+        "while i >= 1:       # i가 1보다 크거나 같은 동안 반복합니다.\n",
+        "    factorial *= i  # factorial에 i를 곱하여 factorial 값을 업데이트합니다.\n",
+        "    i += 1          # i에 1을 더해 다음 숫자로 넘어갑니다.\n",
+        "print(factorial)    # 최종적으로 계산된 factorial 값을 출력합니다."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 258
+        },
+        "id": "_iE4qRvCcbb7",
+        "outputId": "42dfbbb4-c39e-486f-8f26-577ed49ff6f7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "KeyboardInterrupt",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mKeyboardInterrupt\u001b[0m                         Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-12-b05db1306228>\u001b[0m in \u001b[0;36m<cell line: 3>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0mi\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;36m5\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0mfactorial\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;36m1\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 3\u001b[0;31m \u001b[0;32mwhile\u001b[0m \u001b[0mi\u001b[0m \u001b[0;34m>=\u001b[0m \u001b[0;36m1\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      4\u001b[0m     \u001b[0mfactorial\u001b[0m \u001b[0;34m*=\u001b[0m \u001b[0mi\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m     \u001b[0mi\u001b[0m \u001b[0;34m+=\u001b[0m \u001b[0;36m1\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mKeyboardInterrupt\u001b[0m: "
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "  먼저 사용자로부터 숫자를 입력받아 num 변수에 저장합니다. 그리고 초기값으로 factorial 변수를 1로 설정합니다. 이후 while 반복문을 사용하여 num이 1보다 크거나 같을 동안 반복합니다. 반복문 안에서는 factorial에 num을 곱하여 factorial 값을 업데이트하고, num에서 1을 뺍니다. 이렇게 반복문이 종료되면 최종적으로 계산된 factorial 값을 출력합니다."
+      ],
+      "metadata": {
+        "id": "AF5GrLUFWKS8"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 계산할 숫자를 입력받습니다.\n",
+        "num = int(input(\"팩토리얼을 계산할 숫자를 입력하시오.:\"))\n",
+        "\n",
+        "# 초기값으로 1을 설정합니다.\n",
+        "factorial = 1\n",
+        "\n",
+        "#팩토리얼 계산을 위한 반복문인 whilw입니다.\n",
+        "while num >= 1:\n",
+        "    factorial = factorial * num\n",
+        "    num -= 1\n",
+        "\n",
+        "print(f'계된 팩토리얼 값은 {factorial}입니다. ')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "eFl1voJTdARW",
+        "outputId": "707a2cef-f838-4a46-bca3-3ad38cb96b2a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "팩토리얼을 계산할 숫자를 입력하시오.:5\n",
+            "계된 팩토리얼 값은 120입니다. \n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "7.구구단 출력해주는 코드 작성\n",
+        " - 변수 : dan\n",
+        " - 반복문(1) : for문 사용\n",
+        " - 반북문(2) : while문 사용\n"
+      ],
+      "metadata": {
+        "id": "UfDuyF5ue4QO"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "  먼저 사용자로부터 숫자를 입력받아 dan 변수에 저장합니다. 그리고 for 반복문을 사용하여 1부터 9까지 반복하면서 구구단을 출력합니다. 반복문 안에서는 현재 반복되고 있는 숫자(i)와 입력받은 숫자(dan)를 곱하여 구구단의 각 항목을 계산하고 출력합니다."
+      ],
+      "metadata": {
+        "id": "gnOHp6g8Wg2e"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#for문 사용\n",
+        "dan = int(input(\"구구단에서 몇단을 출력할까요: \"))   # 1부터 9까지 반복하면서 구구단을 출력합니다.\n",
+        "for i in range(1,10):\n",
+        "  print(dan, \"x\", i, \"=\", dan * i)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xRNwGdjCfPSl",
+        "outputId": "f05d46ba-e4bb-403d-c2d4-f8fd18e884cd"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "구구단에서 몇단을 출력할까요: 4\n",
+            "4 x 1 = 4\n",
+            "4 x 2 = 8\n",
+            "4 x 3 = 12\n",
+            "4 x 4 = 16\n",
+            "4 x 5 = 20\n",
+            "4 x 6 = 24\n",
+            "4 x 7 = 28\n",
+            "4 x 8 = 32\n",
+            "4 x 9 = 36\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "  먼저 사용자로부터 숫자를 입력받아 dan 변수에 저장합니다. 그리고 초기값으로 i 변수를 1로 설정합니다. 이후 while 반복문을 사용하여 i가 9보다 작거나 같은 동안 반복합니다. 반복문 안에서는 현재 반복되고 있는 숫자(i)와 입력받은 숫자(dan)를 곱하여 구구단의 각 항목을 계산하고 출력합니다. 그리고 i 값을 1씩 증가시켜 다음 숫자로 넘어갑니다."
+      ],
+      "metadata": {
+        "id": "3YH0V8oQWoKZ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#while문 사용\n",
+        "dan = int(input(\"구구단에서 몇단을 출력할래?: \"))\n",
+        "i = 1\n",
+        "while i <= 9:                                      # i가 9보다 작거나 같을 동안 반복합니다.\n",
+        "   print(dan, \"x\", i, \"=\", dan * i)\n",
+        "   i += 1"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "gl1lNYa0f8VQ",
+        "outputId": "bb5d2495-8fe1-4e99-84bf-680231dde978"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "구구단에서 몇단을 출력할래?: 4\n",
+            "4 x 1 = 4\n",
+            "4 x 2 = 8\n",
+            "4 x 3 = 12\n",
+            "4 x 4 = 16\n",
+            "4 x 5 = 20\n",
+            "4 x 6 = 24\n",
+            "4 x 7 = 28\n",
+            "4 x 8 = 32\n",
+            "4 x 9 = 36\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
